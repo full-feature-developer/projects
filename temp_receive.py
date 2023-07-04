@@ -5,12 +5,13 @@ import json
 import feedparser
 
 app = Flask(__name__)
-
+#parse a text file to retrieve the API key
+api_key = open('api\keyfile.txt', 'r')
 def get_weather():
     # Get weather data from OpenWeatherMap
     # Make sure to replace 'your_api_key' with your actual OpenWeatherMap API Key
     # And replace 'your_city' and 'your_country' with your actual city and country
-    weather_response = requests.get('http://api.weatherapi.com/v1/current.json?key=30c20373dd8346feadf160425230407&q=St. Thomas, Ontario')
+    weather_response = requests.get('http://api.weatherapi.com/v1/current.json?key='+ api_key +'=St. Thomas, Ontario')
     weather_data = weather_response.json()
     location = weather_data['location']['name']
     condition = weather_data['current']['condition']['text']
