@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Monitor</title>
+    <link rel="stylesheet" href="\static\styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to the Temperature Monitor</h1>
+        </div>
+        <div id="tempData">
+            <h2>Pool Temperature</h2>
+            <p>Pool Temp: {{pool_temperature}}</p>
+        </div>
+        <div class="weather">
+            <h2>{{ location }}</h2>
+            <p>Currently {{ condition }}</p>
+            <p>Outdoor Temperature: {{ temperature }}°C</p>
+        </div>
+        <div class="news">
+            <h2>Top News</h2>
+            <a href="{{ news_link }}">
+                <img src="{{ news_image }}" alt="News image">
+                <p>{{ news_title }}</p>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
