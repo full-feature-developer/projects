@@ -6,23 +6,16 @@
   </head>
   <body>
     <div class="container">
-      <div class="header">
+      <div class="header panel">
         <h1>Hi Nana and Papa! Here's your pool temperature</h1>
+        <div id="tempData">
+          <h2>Pool Temp: {{pool_temperature}}</h2>
+        </div>
       </div>
-      <div id="tempData">
-        <h2>Pool Temp: {{pool_temperature}}</h2>
-      </div>
-      <div class="weather">
+      <div class="weather panel">
         <h2>{{ location }}</h2>
         <p>Currently {{ condition }}</p>
         <p>Outdoor Temperature: {{ temperature }}°C</p>
-      </div>
-      <div class="news">
-        <h2>Top News</h2>
-        <a href="{{ news_link }}">
-          <img src="{{ news_image }}" alt="News image" />
-          <p>{{ news_title }}</p>
-        </a>
       </div>
     </div>
   </body>
