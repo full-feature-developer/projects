@@ -34,10 +34,14 @@ def get_news():
     return title, link, image_url
 
 
-def process_temperature(temperature):
-    # Process the received temperature data
-    # You can add your own logic here to handle the temperature data
-    print("Received temperature data:", temperature)
+def process_pool_temperature(pool_temperature):
+    print("Received temperature data:", pool_temperature)
+
+    # Convert the temperature from Celsius to Fahrenheit
+    temp_fahrenheit = (float(pool_temperature) * 9/5) + 32
+
+    # Render the temperature in the 'pool_temperature' element of 'index.html'
+    return render_template('index.html', pool_temperature=temp_fahrenheit)
 
 @app.route('/tempdata', methods=['GET'])
 def tempdata():
@@ -45,9 +49,9 @@ def tempdata():
     if temp is None:
         print("No temperature data received")
     else:
-        process_temperature(temp)
-    
-    return 'OK', 200
+        return process_pool_temperature(temp)
+
+
 
 @app.route('/')
 def home():
