@@ -34,15 +34,20 @@ def get_news():
     return title, link, image_url
 
 
-@app.route('/tempdata', methods=['POST'])
+def process_temperature(temperature):
+    # Process the received temperature data
+    # You can add your own logic here to handle the temperature data
+    print("Received temperature data:", temperature)
+
+@app.route('/tempdata', methods=['GET'])
 def tempdata():
-    temp = request.form['pool_temperature']
-    print("Received temperature data: " + temp)
-    if(temp == ''):
+    temp = request.args.get('pool_temperature')
+    if temp is None:
         print("No temperature data received")
-        temp = "No temperature data, check connection"
     else:
-        return 'OK', 200
+        process_temperature(temp)
+    
+    return 'OK', 200
 
 @app.route('/')
 def home():
