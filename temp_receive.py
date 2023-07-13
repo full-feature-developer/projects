@@ -1,9 +1,11 @@
 from flask import Flask, request, render_template
+from flask_cors import CORS
 import requests
 import json
 import feedparser
 
 app = Flask(__name__)
+CORS(app)
 
 def get_weather():
     # Get weather data from OpenWeatherMap
@@ -42,19 +44,25 @@ def process_pool_temperature(pool_temperature):
     return render_template('index.html', pool_temperature=temp_fahrenheit)
 
 
+p_temp = None  # Global variable to store the pool temperature
+
+@app.route('/temperature', methods=['GET', 'POST', 'PUT'])
+def receive_temperature():
+    global p_temp
+
+    if request.method == 'POST' or request.method == 'PUT':
+        p_temp = request.args.get('value')
+        print(f"Received temperature: {p_temp}°C")
+        return process_pool_temperature(p_temp)
+
+    if request.method == 'GET':
+        return p_temp
+
 @app.route('/', methods=['GET'])
 def home():
-    temp = request.args.get('pool_temperature')
-    if temp is None:
-        print("No temperature data received")
-        pool_temperature = 'N/A'
-    else:
-        print(temp)
-        return process_pool_temperature(temp)
-
     location, condition, temperature = get_weather()
     news_title, news_link, news_image = get_news()
-    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=pool_temperature)
+    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=p_temp)
 
 
 if __name__ == "__main__":
