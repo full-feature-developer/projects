@@ -47,18 +47,20 @@ def process_pool_temperature(pool_temperature):
     # Render the temperature in the 'pool_temperature' element of 'index.html'
     return temp_fahrenheit
 
-temp_farhenheit = process_pool_temperature(p_temp)
+
 
 p_temp = None  # Global variable to store the pool temperature
 
 @app.route('/temperature', methods=['GET', 'POST', 'PUT'])
 def receive_temperature():
     global p_temp
+    global f_temp
 
     if request.method == 'POST' or request.method == 'PUT':
         p_temp = request.args.get('value')
-        print(f"Received temperature: {p_temp}°C")
-        return process_pool_temperature(p_temp)
+        print(f"Received temperature: {f_temp}°F")
+        f_temp = float(p_temp) * 9/5 + 32
+        return process_pool_temperature(f_temp)
 
     if request.method == 'GET':
         return p_temp
@@ -67,7 +69,7 @@ def receive_temperature():
 def home():
     location, condition, temperature = get_weather()
     news_title, news_link, news_image = get_news()
-    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=temp_fahrenheit)
+    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=f_temp)
 
 
 if __name__ == "__main__":
