@@ -7,6 +7,7 @@ import feedparser
 
 app = Flask(__name__)
 
+temp_farhenheit = None
 
 def get_weather():
     # Get weather data from OpenWeatherMap
@@ -44,8 +45,9 @@ def process_pool_temperature(pool_temperature):
     temp_fahrenheit = (float(pool_temperature) * 9/5) + 32
 
     # Render the temperature in the 'pool_temperature' element of 'index.html'
-    return render_template('index.html', pool_temperature=temp_fahrenheit)
+    return temp_fahrenheit
 
+temp_farhenheit = process_pool_temperature(p_temp)
 
 p_temp = None  # Global variable to store the pool temperature
 
@@ -65,8 +67,7 @@ def receive_temperature():
 def home():
     location, condition, temperature = get_weather()
     news_title, news_link, news_image = get_news()
-    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=process_pool_temperature(p_temp)
-)
+    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=temp_fahrenheit)
 
 
 if __name__ == "__main__":
