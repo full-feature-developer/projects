@@ -59,7 +59,7 @@ def receive_temperature():
     if request.method == 'POST' or request.method == 'PUT':
         p_temp = request.args.get('value')
         print(f"Received temperature: {f_temp}°F")
-        f_temp = float(p_temp) * 9/5 + 32
+        f_temp = p_temp * 9/5 + 32
         return process_pool_temperature(f_temp)
 
     if request.method == 'GET':
