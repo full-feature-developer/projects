@@ -5,7 +5,7 @@ import json
 import feedparser
 
 app = Flask(__name__)
-CORS(app)
+
 
 def get_weather():
     # Get weather data from OpenWeatherMap
@@ -17,6 +17,8 @@ def get_weather():
     condition = weather_data['current']['condition']['text']
     temperature = weather_data['current']['temp_c']
     return location, condition, temperature
+
+CORS(app)
 
 def get_news():
     # Parse the RSS feed
