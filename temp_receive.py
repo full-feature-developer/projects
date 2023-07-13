@@ -1,4 +1,3 @@
-
 from flask import Flask, request, render_template
 import requests
 import json
@@ -33,7 +32,6 @@ def get_news():
 
     return title, link, image_url
 
-
 def process_pool_temperature(pool_temperature):
     print("Received temperature data:", pool_temperature)
 
@@ -43,21 +41,20 @@ def process_pool_temperature(pool_temperature):
     # Render the temperature in the 'pool_temperature' element of 'index.html'
     return render_template('index.html', pool_temperature=temp_fahrenheit)
 
-@app.route('/tempdata', methods=['GET'])
-def tempdata():
+
+@app.route('/', methods=['GET'])
+def home():
     temp = request.args.get('pool_temperature')
     if temp is None:
         print("No temperature data received")
+        pool_temperature = 'N/A'
     else:
+        print(temp)
         return process_pool_temperature(temp)
 
-
-
-@app.route('/')
-def home():
     location, condition, temperature = get_weather()
     news_title, news_link, news_image = get_news()
-    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image)
+    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=pool_temperature)
 
 
 if __name__ == "__main__":
