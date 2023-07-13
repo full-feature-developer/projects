@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from flask import Flask, request, render_template
 from flask_cors import CORS
 import requests
@@ -64,7 +65,7 @@ def receive_temperature():
 def home():
     location, condition, temperature = get_weather()
     news_title, news_link, news_image = get_news()
-    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=p_temp)
+    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image)
 
 
 if __name__ == "__main__":
