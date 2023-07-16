@@ -1,122 +1,76 @@
-/* .container{
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
+
+:root{
+    background: linear-gradient(135deg, rgba(10,10,30,1) 0%, rgba(20,45,20,1) 100%); /* Deep Navy to Dark Green gradient */
+    height: 100vh;
+}
+
+.container{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    margin-left: 0%;
-    margin-right: 0%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: rgba(30, 25, 55, 0.9); /* Semi-transparent Deep Blue */
+    height: 100vh;
 }
 
 .header_panel{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color:rgb(161, 204, 209) ;
-    color: black;
-}
-
-#tempData{
-    background-color:rgb(244, 242, 222);
-    color: black;
-    height: 100vh;
-}
-
-#tempData h1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 5vh;
-    font-size: 90px;
-}
-
-#tempData h2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 120px;
-}
-.weather_panel{
-    background-color:rgb(233, 179, 132);
-}
-
-.weather_panel h1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 5vh;
-    font-size: 90px;
-}
-
-.weather_panel h2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 120px;
-} */
-
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
-
-:root {
-    background: linear-gradient(135deg, rgba(10,10,30,1) 0%, rgba(20,45,20,1) 100%);
-    height: 100vh;
-}
-
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: rgb(30, 25, 55);
-    background: linear-gradient(135deg, rgba(30,25,55,1) 0%, rgba(10,55,50,1) 100%);
-    height: 100vh;
-}
-
-.header_panel,
-#tempData,
-.weather_panel {
-    padding: 10px;
-    font-size: 1em;
-}
-
-.header_panel {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background: linear-gradient(135deg, rgba(235,45,45,1) 0%, rgba(235,160,45,1) 100%);
-    color: white;
-    font-size: 1.5em;
+    background: linear-gradient(135deg, rgba(235,45,45,1) 0%, rgba(235,160,45,1) 100%); /* Red-Orange gradient */
+    color: white; 
+    padding: 20px;
+    font-size: 2em;
     letter-spacing: 1px;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
     font-family: 'Roboto Slab', serif;
 }
 
-#tempData h1,
-#tempData h2,
-.weather_panel h1,
-.weather_panel h2 {
-    text-align: center;
+#tempData{
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent Dark */
+    color: rgba(0, 174, 239, 1); /* Sky Blue */
+    padding: 20px;
     font-size: 1.5em;
+    line-height: 1.4;
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 }
 
-@media (min-width: 600px) {
-    .container {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .header_panel,
-    #tempData,
-    .weather_panel {
-        padding: 20px;
-        font-size: 1.5em;
-    }
-
-    .header_panel {
-        font-size: 2em;
-    }
-
-    #tempData h1,
-    #tempData h2,
-    .weather_panel h1,
-    .weather_panel h2 {
-        font-size: 2em;
-    }
+#tempData h1, #tempData h2{
+    text-align: center;
 }
 
+#tempData h1{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#tempData h2{
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: rgba(0, 174, 239, 1); /* Sky Blue */
+}
+
+.weather_panel{
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent Dark */
+    padding: 20px;
+    font-size: 1.5em;
+    line-height: 1.4;
+    color: rgba(0, 174, 239, 1); /* Sky Blue */
+    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
+}
+
+.weather_panel h1, .weather_panel h2{
+    text-align: center;
+}
+
+.weather_panel h1{
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.weather_panel h2{
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: rgba(0, 174, 239, 1); /* Sky Blue */
+}
