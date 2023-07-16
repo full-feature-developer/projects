@@ -5,17 +5,18 @@
     <link rel="stylesheet" href="/static/styles.css" />
   </head>
   <body>
+    <div class="header_panel">
+      <h1>Hi Nana and Papa! Here's your Pool and Weather Report!</h1>
+    </div>
     <div class="container">
-      <div class="header panel">
-        <h1>Hi Nana and Papa! Here's your pool temperature</h1>
-        <div id="tempData">
-          <h2>Pool Temp: {{pool_temperature}}°F</h2>
-        </div>
+      <div id="tempData">
+        <h1>Pool</h1>
+        <h2>{{pool_temperature}}°F</h2>
       </div>
-      <div class="weather panel">
-        <h2>{{ location }}</h2>
-        <p>Currently {{ condition }}</p>
-        <p>Outdoor Temperature: {{ temperature }}°C</p>
+      <div class="weather_panel">
+        <h1>{{ location }}</h1>
+        <h2>{{ temperature }}°C</h2>
+        <h2>{{ condition }}</h2>
       </div>
     </div>
   </body>
