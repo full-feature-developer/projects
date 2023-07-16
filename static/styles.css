@@ -20,9 +20,9 @@
     background: linear-gradient(135deg, rgba(235,45,45,1) 0%, rgba(235,160,45,1) 100%);
     color: white; 
     padding: 0px;
-    font-size: 2em;
+    font-size: 1em;
     letter-spacing: 1px;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+
     font-family: 'Roboto Slab', serif;
 }
 
@@ -30,9 +30,9 @@
     background: rgba(255, 255, 255, 0.1); 
     color: rgba(0, 174, 239, 1);
     padding: 0px;
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.4;
-    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
+
 }
 
 #tempData h1, #tempData h2{
@@ -40,12 +40,12 @@
 }
 
 #tempData h1{
-    font-size: 2em;
+    font-size: 1em;
     margin-bottom: 0px;
 }
 
 #tempData h2{
-    font-size: 2.5em;
+    font-size: 1em;
     margin-bottom: 30px;
     color: rgba(0, 174, 239, 1); 
 }
@@ -53,10 +53,9 @@
 .weather_panel{
     background: rgba(255, 255, 255, 0.1); 
     padding: 0px;
-    font-size: 1.5em;
+    font-size: 1em;
     line-height: 1.4;
     color: rgba(0, 174, 239, 1); 
-    clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
 }
 
 .weather_panel h1, .weather_panel h2{
@@ -64,12 +63,12 @@
 }
 
 .weather_panel h1{
-    font-size: 2em;
+    font-size: 1em;
     margin-bottom: 0px;
 }
 
 .weather_panel h2{
-    font-size: 2.5em;
+    font-size: 1em;
     margin-bottom: 0px;
     color: rgba(0, 174, 239, 1); 
 }
