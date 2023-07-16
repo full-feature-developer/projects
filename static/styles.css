@@ -9,12 +9,12 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #A1CCD1;
+    background-color:rgb(161, 204, 209) ;
     color: black;
 }
 
 #tempData{
-    background-color:#F4F2DE;
+    background-color:rgb(244, 242, 222);
     color: black;
     height: 100vh;
 }
@@ -32,7 +32,7 @@
     justify-content: center;
 }
 .weather_panel{
-    background-color:#E9B384;
+    background-color:rgb(233, 179, 132);
 }
 
 .weather_panel h1{
