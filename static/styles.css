@@ -1,60 +1,6 @@
-/* .container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin-left: 0%;
-    margin-right: 0%;
-}
-
-.header_panel{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color:rgb(161, 204, 209) ;
-    color: black;
-}
-
-#tempData{
-    background-color:rgb(244, 242, 222);
-    color: black;
-    height: 100vh;
-}
-
-#tempData h1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 5vh;
-    font-size: 90px;
-}
-
-#tempData h2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 120px;
-}
-.weather_panel{
-    background-color:rgb(233, 179, 132);
-}
-
-.weather_panel h1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-bottom: 5vh;
-    font-size: 90px;
-}
-
-.weather_panel h2{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    font-size: 120px;
-} */
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap');
 :root{
-    background: linear-gradient(135deg, rgba(10,10,30,1) 0%, rgba(20,45,20,1) 100%); /* Deep Navy to Dark Green gradient */
+    background: linear-gradient(135deg, rgba(10,10,30,1) 0%, rgba(20,45,20,1) 100%); 
     height: 100vh;
 }
 .container{
@@ -62,8 +8,8 @@
     grid-template-columns: 1fr 1fr;
     margin: 0;
     font-family: Arial, sans-serif;
-    background: rgb(30, 25, 55); /* Deep Blue */
-    background: linear-gradient(135deg, rgba(30,25,55,1) 0%, rgba(10,55,50,1) 100%); /* Deep Blue to Dark Green gradient */
+    background: rgb(30, 25, 55);
+    background: linear-gradient(135deg, rgba(30,25,55,1) 0%, rgba(10,55,50,1) 100%); 
     height: 100vh;
 }
 
@@ -71,9 +17,9 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: linear-gradient(135deg, rgba(235,45,45,1) 0%, rgba(235,160,45,1) 100%); /* Red-Orange gradient */
+    background: linear-gradient(135deg, rgba(235,45,45,1) 0%, rgba(235,160,45,1) 100%);
     color: white; 
-    padding: 20px;
+    padding: 0px;
     font-size: 2em;
     letter-spacing: 1px;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
@@ -81,9 +27,9 @@
 }
 
 #tempData{
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent Dark */
-    color: rgba(0, 174, 239, 1); /* Sky Blue */
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); 
+    color: rgba(0, 174, 239, 1);
+    padding: 0px;
     font-size: 1.5em;
     line-height: 1.4;
     clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
@@ -95,21 +41,21 @@
 
 #tempData h1{
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 #tempData h2{
     font-size: 2.5em;
     margin-bottom: 30px;
-    color: rgba(0, 174, 239, 1); /* Sky Blue */
+    color: rgba(0, 174, 239, 1); 
 }
 
 .weather_panel{
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent Dark */
-    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); 
+    padding: 0px;
     font-size: 1.5em;
     line-height: 1.4;
-    color: rgba(0, 174, 239, 1); /* Sky Blue */
+    color: rgba(0, 174, 239, 1); 
     clip-path: polygon(0 0, 100% 15%, 100% 100%, 0% 100%);
 }
 
@@ -119,12 +65,12 @@
 
 .weather_panel h1{
     font-size: 2em;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .weather_panel h2{
     font-size: 2.5em;
-    margin-bottom: 30px;
-    color: rgba(0, 174, 239, 1); /* Sky Blue */
+    margin-bottom: 0px;
+    color: rgba(0, 174, 239, 1); 
 }
 
