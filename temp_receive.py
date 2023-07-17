@@ -5,6 +5,8 @@ import requests
 import json
 import feedparser
 from datetime import datetime
+from datetime import datetime, timedelta
+from pytz import timezone
 
 app = Flask(__name__)
 last_successful_receive_time = None
@@ -42,8 +44,12 @@ def process_pool_temperature(pool_temperature):
     global last_successful_receive_time
     print("Received temperature data:", pool_temperature)
 
-    # Update the last successful receive time
-    last_successful_receive_time = datetime.now().strftime("%H:%M:%S")
+    # Get the current time in Eastern Standard Time (EST)
+    est_timezone = timezone('US/Eastern')
+    est_time = datetime.now(est_timezone)
+
+    # Update the last successful receive time in EST format
+    last_successful_receive_time = est_time.strftime("%H:%M:%S")
 
     # Convert the temperature from Celsius to Fahrenheit
     temp_fahrenheit = (float(pool_temperature) * 9/5) + 32
