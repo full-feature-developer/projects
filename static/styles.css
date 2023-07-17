@@ -3,6 +3,7 @@
 :root {
     background: linear-gradient(135deg, rgba(10,10,30,1) 0%, rgba(20,45,20,1) 100%);
     height: 100vh;
+    overflow-y: hidden;
 }
 
 .container {
