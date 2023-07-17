@@ -40,7 +40,8 @@
 #tempData h2,
 #tempData h4,
 .weather_panel h1,
-.weather_panel h2 {
+.weather_panel h2,
+.weather_panel h4 {
     text-align: center;
     font-size: 1em;
 }
@@ -67,7 +68,8 @@
     #tempData h1,
     #tempData h2,
     .weather_panel h1,
-    .weather_panel h2 {
+    .weather_panel h2,
+    .weather_panel h4 {
         font-size: 2em;
         color: white;
     }
