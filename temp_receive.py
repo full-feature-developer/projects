@@ -49,7 +49,11 @@ def process_pool_temperature(pool_temperature):
     est_time = datetime.now(est_timezone)
 
     # Update the last successful receive time in EST format
-    last_successful_receive_time = est_time.strftime("%I:%M:%S %p")
+      # Convert the time to 12-hour clock format with AM/PM
+    if est_time.hour >= 12:
+        last_successful_receive_time = est_time.strftime("%I:%M:%S %p")
+    else:
+        last_successful_receive_time = est_time.strftime("%-I:%M:%S %p")
 
     # Convert the temperature from Celsius to Fahrenheit
     temp_fahrenheit = (float(pool_temperature) * 9/5) + 32
