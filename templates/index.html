@@ -13,8 +13,11 @@
       <div id="tempData">
         <h1>Pool</h1>
         <h1>{{ pool_temperature }}°F</h1>
-       <h4> AT: {{ last_successful_receive_time }}</h4>
+        <div class="time_rec"> 
+          <h6>AT: {{ last_successful_receive_time }}<h6>
+        </div>
       </div>
+
       <div class="weather_panel">
         <h1>{{ location }}</h1>
         <h1>{{ temperature }}°C</h1>
