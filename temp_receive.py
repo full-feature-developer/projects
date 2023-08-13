@@ -4,9 +4,12 @@ from flask_cors import CORS
 import requests
 import json
 import feedparser
+from datetime import datetime
+from datetime import datetime, timedelta
+from pytz import timezone
 
 app = Flask(__name__)
-
+last_successful_receive_time = None
 
 def get_weather():
     # Get weather data from OpenWeatherMap
@@ -38,13 +41,25 @@ def get_news():
     return title, link, image_url
 
 def process_pool_temperature(pool_temperature):
+    global last_successful_receive_time
     print("Received temperature data:", pool_temperature)
+
+    # Get the current time in Eastern Standard Time (EST)
+    est_timezone = timezone('US/Eastern')
+    est_time = datetime.now(est_timezone)
+
+    # Update the last successful receive time in EST format
+      # Convert the time to 12-hour clock format with AM/PM
+    if est_time.hour >= 12:
+        last_successful_receive_time = est_time.strftime("%I:%M %p")
+    else:
+        last_successful_receive_time = est_time.strftime("%-I:%M %p")
 
     # Convert the temperature from Celsius to Fahrenheit
     temp_fahrenheit = (float(pool_temperature) * 9/5) + 32
 
     # Render the temperature in the 'pool_temperature' element of 'index.html'
-    return render_template('index.html', pool_temperature=temp_fahrenheit)
+    return render_template('index.html', pool_temperature=temp_fahrenheit, last_successful_receive_time=last_successful_receive_time)
 
 
 p_temp = None  # Global variable to store the pool temperature
@@ -65,7 +80,7 @@ def receive_temperature():
 def home():
     location, condition, temperature = get_weather()
     news_title, news_link, news_image = get_news()
-    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=p_temp)
+    return render_template('index.html', location=location, condition=condition, temperature=temperature, news_title=news_title, news_link=news_link, news_image=news_image, pool_temperature=p_temp, last_successful_receive_time=last_successful_receive_time)
 
 
 if __name__ == "__main__":

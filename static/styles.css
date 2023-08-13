@@ -3,6 +3,7 @@
 :root {
     background: linear-gradient(135deg, rgba(10,10,30,1) 0%, rgba(20,45,20,1) 100%);
     height: 100vh;
+    overflow-y: hidden;
 }
 
 .container {
@@ -38,8 +39,10 @@
 
 #tempData h1,
 #tempData h2,
+#tempData h6,
 .weather_panel h1,
-.weather_panel h2 {
+.weather_panel h2
+ {
     text-align: center;
     font-size: 1em;
 }
@@ -65,9 +68,12 @@
 
     #tempData h1,
     #tempData h2,
+    #tempData h6,
     .weather_panel h1,
-    .weather_panel h2 {
+    .weather_panel h2
+ {
         font-size: 2em;
         color: white;
     }
+
 }
